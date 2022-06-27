@@ -19,9 +19,9 @@ const NUM_INGRESADO_DEF = 1;
 
 let numero_ingresado = NUM_INGRESADO_DEF;
 
-while (numero_ingresado != NUM_CORRECTO){
-    
+while (numero_ingresado != NUM_CORRECTO){    
     numero_ingresado = prompt("Tratá de adivinar el número");
+   
     if (numero_ingresado == NUM_CORRECTO){
         document.querySelector("#respuesta").innerHTML = `
         <h3> GANASTE </h3>

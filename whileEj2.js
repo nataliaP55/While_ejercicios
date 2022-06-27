@@ -5,22 +5,35 @@ ese caso mostrar una imagen informando la situacional usuario
 */
 
 const PRIMER_NUM_CORRECTO = 8;
-const SEGUNDO_NUM_CORRECTO = 11;
+const SEGUNDO_NUM_CORRECTO = 3;
 const PRIMER_NUM_INGRESADO_DEF = 1;
 const SEGUNDO_NUM_INGRESADO_DEF = 2;
 
-let primer_numero_ingresado = PRIMER_NUM_DEF;
-let segundo_numero_ingresado = SEGUNDO_NUM_DEF;
+let primer_numero_ingresado = "num por def";
+let segundo_numero_ingresado = "num por dif";
 
-while (primer_numero_ingresado == PRIMER_NUM_CORRECTO) {
-    primer_numero_ingresado = prompt("Tratá de adivinar el número");
+/* while (primer_numero_ingresado != PRIMER_NUM_CORRECTO) {
+    primer_numero_ingresado = prompt("Tratá de adivinar el número"); */
   
-    if (primer_numero_ingresado == PRIMER_NUM_CORRECTO){
-        document.querySelector("#respuesta").innerHTML = `
-        <h3> Acertaste, ahora probá con otro número </h3>
+function Verificar(){
+    primer_numero_ingresado = document.querySelector('#numero_uno').value;
+    segundo_numero_ingresado = document.querySelector('#numero_dos').value;
+    
 
-        <h3> GANASTE </h3>
-        <img src=${IMG_GANASTE}>
+    if ((primer_numero_ingresado == PRIMER_NUM_CORRECTO) && (segundo_numero_ingresado == SEGUNDO_NUM_CORRECTO)){
+        document.querySelector("#respuesta").innerHTML = `
+         
+        <h3> GANASTE </h3>     
+        `;
+
+    }else if ((primer_numero_ingresado == PRIMER_NUM_CORRECTO) || (segundo_numero_ingresado == SEGUNDO_NUM_CORRECTO)) {
+        document.querySelector('#respuesta').innerHTML = `
+        <h3>  casi ganaste </h3>
+  
+        `;
+    } else { 
+        document.querySelector('#respuesta').innerHTML = `
+            <h1> Vuelva a intentarlo </h1> 
         `;
     }
 }
